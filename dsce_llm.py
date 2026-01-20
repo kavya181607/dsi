@@ -1,22 +1,21 @@
 import streamlit as st
 from groq import Groq
 
-# Page configuration
 st.set_page_config(
-    page_title="kavyasneha Content Generator",
+    page_title="kavya sneha  – Content Generator",
     layout="wide"
 )
 
-# Display logo
-st.image("kavyasneha_logo.png", width=120)
+st.image(
+    "image.jpg",   
+    width=120         
+)
 
-# App title
-st.title("✨ kavyasneha – Content Generator")
+st.title("📣 kavya sneha  – Content Generator")
+st.caption("AI-powered marketing content generator")
 
-# Groq client
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
-# Layout
 col1, col2 = st.columns(2)
 
 with col1:
@@ -33,16 +32,12 @@ with col1:
 
 with col2:
     if "text" in st.session_state:
-        content = st.text_area(
-            "Generated Content",
-            st.session_state.text,
-            height=300
-        )
+        content = st.text_area("Generated Content", st.session_state.text, height=300)
 
         st.download_button(
             label="⬇️ Download as TXT",
             data=content,
-            file_name="kavyasneha_marketing_copy.txt",
+            file_name="marketing_copy.txt",
             mime="text/plain"
         )
     else:
