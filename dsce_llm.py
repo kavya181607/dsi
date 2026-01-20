@@ -7,7 +7,7 @@ st.set_page_config(
 )
 
 st.image(
-    "image.jpg",   
+    "image.jpeg",   
     width=120         
 )
 
